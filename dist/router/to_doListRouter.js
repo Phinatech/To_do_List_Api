@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const to_doList_Controller_1 = require("../controller/to_doList_Controller");
+const judithTo_doList = (0, express_1.Router)();
+judithTo_doList.route("/GetList").get(to_doList_Controller_1.GetAll);
+judithTo_doList.route("/GettingOne/:id").get(to_doList_Controller_1.Getone);
+judithTo_doList.route("/Search").get(to_doList_Controller_1.Searching);
+judithTo_doList.route("/postingData").post(to_doList_Controller_1.Posting);
+judithTo_doList.route("/update/:id").patch(to_doList_Controller_1.Updating);
+judithTo_doList.route("/deleting").delete(to_doList_Controller_1.deleting);
+exports.default = judithTo_doList;
